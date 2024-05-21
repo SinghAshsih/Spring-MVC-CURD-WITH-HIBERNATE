@@ -37,14 +37,19 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	@Override
 	public Employee getEmployeeById(int id) {
 		Session session = sessionFactory.getCurrentSession();
-		Employee employee = (Employee) session.get(Employee.class, new Integer(id));
+		//Employee employee = (Employee) session.get(Employee.class, new Integer(id));   depreciated method after 9 version
+		Employee employee = (Employee) session.get(Employee.class,Integer.valueOf(id));
 		return employee;
 	}
 
 	@Override
 	public void removeEmployee(int id) {
 		Session session = sessionFactory.getCurrentSession();
-		Employee employee = (Employee) session.get(Employee.class, new Integer(id));
+		/*
+		 * Employee employee = (Employee) session.get(Employee.class, new Integer(id));
+		 * depreciated method after 9 version
+		 */
+		Employee employee = (Employee) session.get(Employee.class, Integer.valueOf(id));
 		if (null != employee) {
 			session.delete(employee);
 		}
