@@ -63,7 +63,7 @@
 <p class="welcome-message">Manage your data easily and effectively</p>
 
 <!-- Link to the Employee CRUD App -->
-<a href="http://localhost:9090/HibernateCurdMvc/employees" class="custom-link">Click Here to View Employees</a>
+<a href="http://localhost:8080/HibernateCurdMvc/employees" class="custom-link">Click Here to View Employees</a>
 
 <!-- Additional Image Section -->
 <div>
