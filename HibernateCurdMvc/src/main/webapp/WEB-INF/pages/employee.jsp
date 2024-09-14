@@ -12,11 +12,9 @@
             margin: 0;
             padding: 0;
         }
-
         h1, h3 {
             color: #333;
         }
-
         .empTable {
             border-collapse: collapse;
             width: 100%;
@@ -24,39 +22,32 @@
             background-color: #fff;
             border: 1px solid #ddd;
         }
-
         .empTable th, .empTable td {
             text-align: left;
             padding: 12px;
             border: 1px solid #ddd;
         }
-
         .empTable th {
             background-color: #4CAF50;
             color: white;
         }
-
         .empTable tr:nth-child(even) {
             background-color: #f2f2f2;
         }
-
         .empTable tr:hover {
             background-color: #ddd;
         }
-
         form {
             background-color: #fff;
             padding: 20px;
             border: 1px solid #ddd;
             margin: 20px 0;
         }
-
         form label {
             display: block;
             margin-bottom: 8px;
             color: #333;
         }
-
         form input[type="text"], form input[type="number"], form input[type="email"],
         form input[type="submit"] {
             width: 100%;
@@ -66,16 +57,18 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
-
         form input[type="submit"] {
             background-color: #4CAF50;
             color: white;
             border: none;
             cursor: pointer;
         }
-
         form input[type="submit"]:hover {
             background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
         }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
@@ -111,6 +104,7 @@
                         <spring:message code="FirstName" />
                     </form:label></td>
                 <td><form:input path="firstName" /></td>
+                <td><form:errors path="firstName" cssClass="error" /></td>
             </tr>
 
             <tr>
@@ -118,6 +112,7 @@
                         <spring:message code="LastName" />
                     </form:label></td>
                 <td><form:input path="lastName" /></td>
+                <td><form:errors path="lastName" cssClass="error" /></td>
             </tr>
 
             <tr>
@@ -125,6 +120,7 @@
                         <spring:message code="Age" />
                     </form:label></td>
                 <td><form:input path="age" /></td>
+                <td><form:errors path="age" cssClass="error" /></td>
             </tr>
 
             <tr>
@@ -132,6 +128,7 @@
                         <spring:message code="Education" />
                     </form:label></td>
                 <td><form:input path="education" /></td>
+                <td><form:errors path="education" cssClass="error" /></td>
             </tr>
 
             <tr>
@@ -139,6 +136,7 @@
                         <spring:message code="Salary" />
                     </form:label></td>
                 <td><form:input path="salary" /></td>
+                <td><form:errors path="salary" cssClass="error" /></td>
             </tr>
 
             <tr>

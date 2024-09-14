@@ -6,6 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "Employee")
@@ -15,18 +19,29 @@ public class Employee {
 	@Column(name = "Employee_Id")
 	private Integer employeeId;
 
+	@NotNull(message = "First Name cannot be null")
+	@Size(min = 1, max = 50, message = "First Name must be between 1 and 50 characters")
 	@Column(name = "FirstName")
 	private String firstName;
 
+	@NotNull(message = "Last Name cannot be null")
+	@Size(min = 1, max = 50, message = "Last Name must be between 1 and 50 characters")
 	@Column(name = "LastName")
 	private String lastName;
 
+	@NotNull(message = "Age cannot be null")
+	@Min(value = 21, message = "Age should not be less than 21")
+	@Max(value = 50, message = "Age should not be greater than 50")
 	@Column(name = "Age")
 	private Integer age;
 
+	@NotNull(message = "Education cannot be null")
+	@Size(min = 1, max = 100, message = "Education must be between 1 and 100 characters")
 	@Column(name = "Education")
 	private String education;
 
+	@NotNull(message = "Salary cannot be null")
+	@Min(value = 0, message = "Salary should not be less than 0")
 	@Column(name = "Salary")
 	private Double salary;
 
